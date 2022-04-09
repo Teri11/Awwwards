@@ -1,4 +1,4 @@
-## AWWARDS
+## AWWWARDS
 <h3><strong>AUTHOR</strong></H3><hr>
 Created on 8/04/2022<br> by <strong>Kubai Augustine Mweteri</strong>
 
