@@ -1,5 +1,4 @@
 """awwwardsproject URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
@@ -16,9 +15,14 @@ Including another URLconf
 from django.contrib.auth import views 
 from django.contrib import admin
 from django.urls import path,include
+from django_registration.backends.one_step.views import RegistrationView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('awwwardsapp.urls'))           
-    
+    path('',include('awwwardsapp.urls')),
+    path('accounts/register/',RegistrationView.as_view(success_url='/create_profile'),name='django_registration_register'),
+    path('accounts/', include('django_registration.backends.one_step.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('logout/', views.logout_then_login, name='logout'), 
+        
 ]
